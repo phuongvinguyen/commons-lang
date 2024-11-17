@@ -1560,6 +1560,22 @@ public class SystemUtils {
     public static final boolean IS_OS_MAC_OSX_SONOMA = getOsMatches("Mac OS X", "14");
 
     /**
+     * The constant {@code true} if this is macOS X Sequoia.
+     * <p>
+     * The value depends on the value of the {@link #OS_NAME} and {@link #OS_VERSION} constants.
+     * </p>
+     * <p>
+     * The value is {@code false} if {@link #OS_NAME} or {@link #OS_VERSION} is {@code null}.
+     * </p>
+     * <p>
+     * This value is initialized when the class is loaded.
+     * </p>
+     *
+     * @since 3.18.0
+     */
+    public static final boolean IS_OS_MAC_OSX_SEQUOIA = getOsMatches("Mac OS X", "15");
+
+    /**
      * The constant {@code true} if this is FreeBSD.
      * <p>
      * The result depends on the value of the {@link #OS_NAME} constant.
@@ -2021,7 +2037,7 @@ public class SystemUtils {
     }
 
     /**
-     * Gets the host name from an environment variable (COMPUTERNAME on Windows, HOSTNAME elsewhere).
+     * Gets the host name from an environment variable ({@code COMPUTERNAME} on Windows, {@code HOSTNAME} elsewhere).
      *
      * <p>
      * If you want to know what the network stack says is the host name, you should use {@code InetAddress.getLocalHost().getHostName()}.
@@ -2158,7 +2174,7 @@ public class SystemUtils {
     }
 
     /**
-     * Returns whether the {@link #JAVA_AWT_HEADLESS} value is {@code true}.
+     * Tests whether the {@link #JAVA_AWT_HEADLESS} value is {@code true}.
      *
      * @return {@code true} if {@code JAVA_AWT_HEADLESS} is {@code "true"}, {@code false} otherwise.
      * @see #JAVA_AWT_HEADLESS
@@ -2170,7 +2186,7 @@ public class SystemUtils {
     }
 
     /**
-     * Is the Java version at least the requested version.
+     * Tests whether the Java version at least the requested version.
      *
      * @param requiredVersion the required version, for example 1.31f
      * @return {@code true} if the actual version is equal or greater than the required version
@@ -2180,7 +2196,7 @@ public class SystemUtils {
     }
 
     /**
-     * Is the Java version at most the requested version.
+     * Tests whether the Java version at most the requested version.
      *
      * <p>
      * Example input:
@@ -2195,7 +2211,7 @@ public class SystemUtils {
     }
 
     /**
-     * Decides if the Java version matches.
+     * Tests whether the Java version matches.
      *
      * <p>
      * This method is package private instead of private to support unit test invocation.
@@ -2213,7 +2229,7 @@ public class SystemUtils {
     }
 
     /**
-     * Decides if the operating system matches.
+     * Tests whether the operating system matches.
      * <p>
      * This method is package private instead of private to support unit test invocation.
      * </p>
@@ -2232,7 +2248,7 @@ public class SystemUtils {
     }
 
     /**
-     * Decides if the operating system matches.
+     * Tests whether the operating system matches.
      * <p>
      * This method is package private instead of private to support unit test invocation.
      * </p>
@@ -2249,7 +2265,7 @@ public class SystemUtils {
     }
 
     /**
-     * Decides if the operating system version matches.
+     * Tests whether the operating system version matches.
      * <p>
      * This method is package private instead of private to support unit test invocation.
      * </p>
